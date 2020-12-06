@@ -5,7 +5,13 @@
   background-color: $primary;
   border-top: 1px solid gray;
   max-width: 260px;
+  > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+  }
 }
+
 .sidebar__header {
   display: flex;
   border-bottom: 1px solid gray;
@@ -23,7 +29,7 @@
   flex: 1;
   > h2 {
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 5px;
   }
   > h3 {

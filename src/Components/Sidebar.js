@@ -4,6 +4,9 @@ import SidebarOption from "./SidebarOption";
 
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
+import InsertCommentIcon from "@material-ui/icons/InsertComment";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AddIcon from "@material-ui/icons/Add";
 
 function Sidebar() {
   return (
@@ -17,10 +20,14 @@ function Sidebar() {
           </h3>
         </div>
         <CreateIcon />
-        <SidebarOption Icon={} title="Resources" />
-        <SidebarOption Icon={} title="Programming Journal" />
-        <SidebarOption />
       </div>
+      <SidebarOption Icon={InsertCommentIcon} title="Resources" />
+      <SidebarOption Icon={InsertCommentIcon} title="Programming Journal" />
+      <hr />
+      <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
+      <hr />
+      <SidebarOption Icon={AddIcon} title="Add Channel" />
+      {/* Need to connect to database, then list channels */}
     </div>
   );
 }
