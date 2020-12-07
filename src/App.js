@@ -2,6 +2,8 @@ import "./Styles/App.scss";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Chat from "./Components/Chat";
+import Resources from "./Components/Resources";
+import Journal from "./Components/Journal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -11,6 +13,18 @@ function App() {
         <Header />
         <div className="app_body">
           <Sidebar />
+
+          <Switch>
+            <Route path="/resources">
+              <Resources />
+            </Route>
+          </Switch>
+
+          <Switch>
+            <Route path="/journal">
+              <Journal />
+            </Route>
+          </Switch>
 
           <Switch>
             <Route path="/room/:roomId">
