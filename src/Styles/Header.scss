@@ -24,7 +24,6 @@
   flex: 0.4;
   background-color: lightslategray;
   text-align: center;
-  padding: 0 50px;
   border: 1px gray solid;
   border-radius: 6px;
 }
@@ -33,7 +32,10 @@
   background-color: transparent;
   border: none;
   text-align: center;
-  min-width: 35vw;
+  min-width: 41vw;
+  &::placeholder {
+    color: white;
+  }
 }
 
 .header__right {
