@@ -1,0 +1,25 @@
+.search {
+  .d-flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .MuiFormGroup-root.ml-5 {
+    padding-right: 30px;
+  }
+}
+
+.search_area {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  .MuiButton-containedSecondary {
+    background-color: #33475b;
+  }
+  .mb-3 {
+    display: flex;
+    .form-control {
+      padding-right: 275px;
+    }
+  }
+}

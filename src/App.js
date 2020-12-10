@@ -30,9 +30,7 @@ function App() {
             <Route path="/room/:roomId">
               <Chat />
             </Route>
-            <Route path="/">
-              <h1>Test</h1>
-            </Route>
+            <Route path="/"></Route>
           </Switch>
         </div>
       </Router>
