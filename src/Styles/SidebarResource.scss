@@ -1,0 +1,12 @@
+.resourceSidebar {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.9;
+    background-color: #425b76;
+  }
+}
