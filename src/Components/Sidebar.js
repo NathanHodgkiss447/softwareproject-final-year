@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/Sidebar.scss";
 import SidebarOption from "./SidebarOption";
+import SidebarResource from "./SidebarResource";
 
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
@@ -37,8 +39,14 @@ function Sidebar() {
         </div>
         <CreateIcon />
       </div>
-      <SidebarOption Icon={InsertCommentIcon} title="Resources" />
-      <SidebarOption Icon={InsertCommentIcon} title="Programming Journal" />
+
+      <Link to="/resources">
+        <SidebarResource Icon={InsertCommentIcon} title="Resources" />
+      </Link>
+
+      <Link to="/journal">
+        <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
+      </Link>
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
       <hr />

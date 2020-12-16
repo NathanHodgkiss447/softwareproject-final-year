@@ -1,0 +1,53 @@
+.resource {
+  box-sizing: border-box;
+  margin: 0;
+  flex: 0.7;
+  flex-grow: 1;
+  &_header {
+    display: flex;
+    justify-content: center;
+    background: #33475b;
+    border: 1px solid gray;
+    color: white;
+    text-align: center;
+    padding: 18px 0 18px;
+    .h1 {
+      display: inline;
+      font-weight: 300;
+    }
+    .MuiSvgIcon-root {
+      padding-right: 10px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.search {
+  .d-flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .loading {
+  }
+  .MuiFormGroup-root.ml-5 {
+    padding-right: 30px;
+  }
+}
+
+.search_area {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  .MuiButton-containedSecondary {
+    background-color: #33475b;
+  }
+  .mb-3 {
+    display: flex;
+    width: 70%;
+    .form-control {
+      padding-right: 275px;
+      margin-right: 5px;
+    }
+  }
+}
