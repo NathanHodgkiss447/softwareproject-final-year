@@ -1,8 +1,11 @@
 .search {
+  flex-grow: 1;
   .d-flex {
     display: flex;
     justify-content: center;
     padding-top: 10px;
+  }
+  .loading {
   }
   .MuiFormGroup-root.ml-5 {
     padding-right: 30px;

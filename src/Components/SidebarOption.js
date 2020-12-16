@@ -31,11 +31,11 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
     >
       {Icon && <Icon className="sidebarOption__icon" />}
       {Icon ? (
-        <h3>{title}</h3>
+        <h6>{title}</h6>
       ) : (
-        <h3 className="sidebarOption__channel">
+        <h6 className="sidebarOption__channel">
           <span className="sidebarOption__hash" /># {title}
-        </h3>
+        </h6>
       )}
     </div>
   );

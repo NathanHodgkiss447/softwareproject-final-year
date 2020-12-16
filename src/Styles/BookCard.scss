@@ -1,0 +1,10 @@
+.row {
+  padding-top: 50px;
+  .col-lg-4 {
+    .m-auto {
+      .card-img-top {
+        width: 100% !important;
+      }
+    }
+  }
+}
