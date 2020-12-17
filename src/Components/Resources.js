@@ -87,6 +87,9 @@ function Resources() {
 
   return (
     <div className="search">
+      <div className="journal__header">
+        <h3>Resources</h3>
+      </div>
       <div className="search_area">
         <InputGroup size="lg" className="mb-3">
           <Input

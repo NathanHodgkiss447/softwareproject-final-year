@@ -1,0 +1,11 @@
+.journal {
+  flex: 1;
+  &__header {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    background-color: #33475b;
+    padding: 16px;
+    border: 1px solid gray;
+  }
+}
