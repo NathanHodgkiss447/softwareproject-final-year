@@ -9,13 +9,14 @@ import SidebarResource from "./Components/SidebarResource";
 import Journal from "./Components/Journal";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 import React, { useEffect, useState } from "react";
 
 const alanKey =
   "b676a44263567b4d0d7478389dbdec362e956eca572e1d8b807a3e2338fdd0dc/stage";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     alanBtn({
