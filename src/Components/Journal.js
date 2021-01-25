@@ -23,9 +23,9 @@ function Journal() {
         <div className="journal__header">
           <h3>Programming Journal</h3>
         </div>
+        {/* Form used from React Final Form Documentation: https://final-form.org/docs/react-final-form/examples/simple  */}
         <Form
           onSubmit={onSubmit}
-          // initialValues={{ stooge: "larry", employed: false }}
           render={({ handleSubmit, form, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit}>
               <div>

@@ -7,6 +7,10 @@ import InfoIcon from "@material-ui/icons/Info";
 import db from "../firebase";
 import Message from "./Message";
 
+{
+  /* Code inspiration from Clever Programmer YT */
+}
+
 function Chat() {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = useState(null);

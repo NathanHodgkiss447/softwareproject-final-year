@@ -18,6 +18,9 @@ function Resources() {
   const [cards, setCards] = useState([]);
 
   //Making the API call
+  {
+    /* https://developers.google.com/books/docs/v1/using#PerformingSearch */
+  }
   const handleSubmit = () => {
     setLoading(true);
     if (maxResults > 40 || maxResults < 1) {

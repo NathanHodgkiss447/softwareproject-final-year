@@ -13,6 +13,9 @@ import AddIcon from "@material-ui/icons/Add";
 
 import db from "../firebase";
 
+{
+  /* Code inspiration from Clever Programmer YT */
+}
 function Sidebar() {
   const [channels, setChannels] = useState([]);
 
