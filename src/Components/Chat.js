@@ -6,6 +6,7 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import InfoIcon from "@material-ui/icons/Info";
 import db from "../firebase";
 import Message from "./Message";
+import ChatInput from "./ChatInput";
 
 {
   /* Code inspiration from Clever Programmer YT */
@@ -32,9 +33,6 @@ function Chat() {
       );
   }, [roomId]);
 
-  console.log(roomDetails);
-  console.log(roomMessages);
-
   return (
     <div className="chat">
       <div className="chat__header">
@@ -54,15 +52,16 @@ function Chat() {
       </div>
 
       <div className="chat__messages">
-        {roomMessages.map(({ message, timestamp, user, userImage }) => (
+        {roomMessages.map(({ message, user, userImage }) => (
           <Message
             message={message}
-            timestamp={timestamp}
+            // timestamp={timestamp}
             user={user}
             userImage={userImage}
           />
         ))}
       </div>
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 }
