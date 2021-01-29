@@ -12,6 +12,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
 
 import db from "../firebase";
+import { firebaseApp } from "../firebase";
 import { useStateValue } from "../StateProvider";
 
 {
@@ -51,6 +52,12 @@ function Sidebar() {
 
       <Link to="/journal">
         <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
+      </Link>
+      <Link to="/journal-notes">
+        <SidebarResource
+          Icon={InsertCommentIcon}
+          title="Programming Journal - Notes"
+        />
       </Link>
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
