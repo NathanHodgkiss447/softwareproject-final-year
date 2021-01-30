@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
+import "react-quill/dist/quill.snow.css";
 
 ReactDOM.render(
   <React.StrictMode>

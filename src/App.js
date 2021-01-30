@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Resources from "./Components/Resources";
 import SidebarResource from "./Components/SidebarResource";
 import Journal from "./Components/Journal";
+import Note from "./Components/Note";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -25,6 +26,10 @@ function App() {
         alert("Test code was exected");
       },
     });
+  }, []);
+
+  useEffect(() => {
+    document.title = "Smart Programming Journal";
   }, []);
 
   return (
@@ -49,6 +54,12 @@ function App() {
               <Switch>
                 <Route path="/journal">
                   <Journal />
+                </Route>
+              </Switch>
+
+              <Switch>
+                <Route path="/journal-notes">
+                  <Note />
                 </Route>
               </Switch>
 
