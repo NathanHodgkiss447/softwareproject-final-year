@@ -1,7 +1,9 @@
 import React from "react";
 import db from "../firebase";
+import timestamp from "../firebase";
 
 import EditorComponent from "./Editor/EditorNote.js";
+import "../Styles/Note.scss";
 import SidebarComponent from "./SidebarNotes/SidebarNotes";
 
 class Note extends React.Component {
@@ -9,7 +11,7 @@ class Note extends React.Component {
     super();
     this.state = {
       selectedNoteIndex: null,
-      selectednote: null,
+      selectedNote: null,
       notes: null,
     };
   }
@@ -25,11 +27,75 @@ class Note extends React.Component {
     });
   };
 
+  noteUpdate = (id, noteObj) => {
+    db.collection("notes").doc(id).update({
+      title: noteObj.title,
+      body: noteObj.body,
+    });
+  };
+
+  newNote = async () => {
+    const note = {
+      title: "",
+      body: "",
+    };
+
+    const newFromDB = await db.collection("notes").add({
+      title: note.title,
+      body: note.body,
+    });
+    const newID = newFromDB.id;
+    await this.setState({ notes: [...this.state.notes, note] });
+    const newNoteIndex = this.state.notes.indexOf(
+      this.state.notes.filter((_note) => _note.id === newID)[0]
+    );
+
+    this.setState({
+      selectedNote: this.state.notes[newNoteIndex],
+      selectedNoteIndex: newNoteIndex,
+    });
+  };
+
+  selectNote = (note, index) => {
+    this.setState({ selectedNoteIndex: index, selectedNote: note });
+  };
+
+  deleteNote = async (note) => {
+    const noteIndex = this.state.notes.indexOf(note);
+    await this.setState({
+      notes: this.state.notes.filter((_note) => _note !== note),
+    });
+    if (this.state.selectedNoteIndex === noteIndex) {
+      this.setState({ selectedNoteIndex: null, selectNote: null });
+    } else {
+      this.state.notes.length > 1
+        ? this.selectNote(
+            this.state.notes[(this.state.selectedNoteIndex, -1)],
+            this.state.selectedNoteIndex - 1
+          )
+        : this.setState({ selectedNoteIndex: null, selectNote: null });
+    }
+    db.collection("notes").doc(note.id).delete();
+  };
+
   render() {
     return (
       <div className="app-container">
-        <SidebarComponent />
-        <EditorComponent />
+        <SidebarComponent
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+          selectNote={this.selectNote}
+          deleteNote={this.deleteNote}
+          newNote={this.newNote}
+        />
+        {this.state.selectedNote ? (
+          <EditorComponent
+            selectedNote={this.state.selectedNote}
+            selectedNoteIndex={this.state.selectedNoteIndex}
+            notes={this.state.notes}
+            noteUpdate={this.noteUpdate}
+          />
+        ) : null}
       </div>
     );
   }
