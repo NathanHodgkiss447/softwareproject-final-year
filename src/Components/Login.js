@@ -3,10 +3,28 @@ import React from "react";
 import { auth, provider } from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
+import { firebaseApp } from "../firebase";
+import { useEffect } from "react";
 import "../Styles/Login.scss";
 
 function Login() {
   const [, dispatch] = useStateValue();
+
+  useEffect(() => {
+    firebaseApp.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: user,
+        });
+      } else {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: "",
+        });
+      }
+    });
+  }, []);
 
   const signIn = (e) => {
     e.preventDefault();
