@@ -31,7 +31,7 @@ const styles = (theme) => ({
     // display: "flex",
     // flexDirection: "column",
     height: "100%",
-    maxWidth: "60%",
+    maxWidth: "63%",
     width: "100%",
     boxSizing: "border-box",
     overflow: "scroll",
