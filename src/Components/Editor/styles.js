@@ -9,6 +9,7 @@ const styles = (theme) => ({
   },
   titleInput: {
     height: "50px",
+    width: "100%",
     boxSizing: "border-box",
     border: "none",
     padding: "5px",
@@ -20,15 +21,20 @@ const styles = (theme) => ({
   },
   editIcon: {
     position: "absolute",
-    left: "310px",
-    top: "12px",
+    marginLeft: "10px",
+    top: "80px",
     color: "white",
     width: "10",
     height: "10",
   },
   editorContainer: {
+    // display: "flex",
+    // flexDirection: "column",
     height: "100%",
+    maxWidth: "60%",
+    width: "100%",
     boxSizing: "border-box",
+    overflow: "scroll",
   },
 });
 

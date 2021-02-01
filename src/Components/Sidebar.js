@@ -54,10 +54,7 @@ function Sidebar() {
         <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
       </Link>
       <Link to="/journal-notes">
-        <SidebarResource
-          Icon={InsertCommentIcon}
-          title="Programming Journal - Notes"
-        />
+        <SidebarResource Icon={InsertCommentIcon} title="Notes" />
       </Link>
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
