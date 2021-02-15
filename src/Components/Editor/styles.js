@@ -35,6 +35,7 @@ const styles = (theme) => ({
     width: "100%",
     boxSizing: "border-box",
     overflow: "scroll",
+    flex: "1",
   },
 });
 

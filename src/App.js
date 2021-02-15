@@ -36,7 +36,9 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <Login />
+          <>
+            <Login />
+          </>
         ) : (
           //Fragment - Need to wrap as two sibling beside each other
           <>
@@ -73,6 +75,7 @@ function App() {
           </>
         )}
       </Router>
+      )
     </div>
   );
 }
