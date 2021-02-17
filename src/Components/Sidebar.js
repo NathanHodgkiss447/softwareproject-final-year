@@ -53,6 +53,14 @@ function Sidebar() {
       <Link to="/journal">
         <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
       </Link>
+
+      <Link to="/journalEntry">
+        <SidebarResource
+          Icon={InsertCommentIcon}
+          title="Programming Journal - Draft"
+        />
+      </Link>
+
       <Link to="/journal-notes">
         <SidebarResource Icon={InsertCommentIcon} title="Notes" />
       </Link>

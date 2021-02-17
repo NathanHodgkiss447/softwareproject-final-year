@@ -12,6 +12,7 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import React, { useEffect, useState } from "react";
+import JournalEntry from "./Components/JournalEntry";
 
 const alanKey =
   "b676a44263567b4d0d7478389dbdec362e956eca572e1d8b807a3e2338fdd0dc/stage";
@@ -56,6 +57,12 @@ function App() {
               <Switch>
                 <Route path="/journal">
                   <Journal />
+                </Route>
+              </Switch>
+
+              <Switch>
+                <Route path="/journalEntry">
+                  <JournalEntry />
                 </Route>
               </Switch>
 
