@@ -1,4 +1,9 @@
 .app-container {
   display: flex;
-  max-width: 50%;
+  flex: 1;
+  max-width: 100%;
+}
+
+.container {
+  text-align: center;
 }

@@ -5,6 +5,8 @@ import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 
+// Code followed from The Assembly on YouTube
+
 class EditorComponent extends React.Component {
   constructor() {
     super();

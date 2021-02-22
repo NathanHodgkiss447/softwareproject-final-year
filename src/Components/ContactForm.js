@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import db from "../firebase";
 
 //Followed tutorial from CodAffection
 
-const ContactForm = ({ props }) => {
+const ContactForm = (props) => {
   const initialFieldValues = {
     projectName: "",
     programmingLanguage: "",
