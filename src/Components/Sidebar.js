@@ -50,15 +50,8 @@ function Sidebar() {
         <SidebarResource Icon={InsertCommentIcon} title="Resources" />
       </Link>
 
-      <Link to="/journal">
-        <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
-      </Link>
-
       <Link to="/journalEntry">
-        <SidebarResource
-          Icon={InsertCommentIcon}
-          title="Programming Journal - Draft"
-        />
+        <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
       </Link>
 
       <Link to="/journal-notes">
