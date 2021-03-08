@@ -107,7 +107,8 @@ const ContactForm = (props) => {
       <div className="form-group">
         <input
           type="submit"
-          value={props.currentId == "" ? "Save" : "Update"}
+          // value={props.currentId == "" ? "Save" : "Update"}
+          value="Submit"
           className="btn btn-primary btn-block"
         ></input>
       </div>

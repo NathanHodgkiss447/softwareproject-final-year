@@ -83,11 +83,10 @@ const Contacts = () => {
 
   return (
     <>
-      <div className="jumbotron jumbotron-fluid">
-        <div className="container">
-          <h1 class="display-4">Journal Entry</h1>
-        </div>
+      <div className="journal__header">
+        <h3>Programming Journal</h3>
       </div>
+
       <div className="row">
         <div className="col-md-5">
           <ContactForm

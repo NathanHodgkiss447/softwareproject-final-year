@@ -8,9 +8,40 @@
   text-align: center;
 }
 .row {
+  padding-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  .journal__header {
+    margin-bottom: 5%;
+  }
+  .col-md-5 {
+    padding-left: 4%;
+    .input-group-text {
+      background-color: #33475b;
+    }
+    .form-row {
+      margin-left: 0px;
+    }
+    .btn-primary {
+      background-color: #33475b;
+      border-color: #33475b;
+    }
+  }
   .col-md-8 {
     flex: 1;
-    max-width: 90%;
-    margin-left: 5%;
+    max-width: 100%;
+    margin-left: 15px;
+    padding: 0 0 0 0;
+  }
+  .col-md-7 {
+    padding-right: 4%;
+    .table {
+      border: 1px solid #33475b;
+      .thead-light th {
+        color: white;
+        font-weight: 400;
+        background-color: #33475b;
+      }
+    }
   }
 }
