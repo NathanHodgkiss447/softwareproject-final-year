@@ -23,6 +23,8 @@
 }
 
 .search {
+  overflow-y: scroll;
+  padding-bottom: 8%;
   .d-flex {
     display: flex;
     justify-content: center;

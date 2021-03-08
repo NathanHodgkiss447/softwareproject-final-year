@@ -4,7 +4,7 @@ import { auth, provider } from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 import { firebaseApp } from "../firebase";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/Login.scss";
 
 function Login() {
@@ -51,7 +51,9 @@ function Login() {
         />
         <h1>Sign in to Smart Programming Journal</h1>
         <p>4th Year Software Project</p>
-        <Button onClick={signIn}>Sign in with Google</Button>
+        <Button variant="contained" color="secondary" onClick={signIn}>
+          Sign in with Google
+        </Button>
       </div>
     </div>
   );

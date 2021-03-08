@@ -31,10 +31,11 @@ const styles = (theme) => ({
     // display: "flex",
     // flexDirection: "column",
     height: "100%",
-    maxWidth: "63%",
+    maxWidth: "100%",
     width: "100%",
     boxSizing: "border-box",
     overflow: "scroll",
+    flex: "1",
   },
 });
 

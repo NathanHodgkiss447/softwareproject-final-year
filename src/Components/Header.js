@@ -4,6 +4,7 @@ import { Avatar } from "@material-ui/core";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import SearchIcon from "@material-ui/icons/Search";
 import HelpIcon from "@material-ui/icons/Help";
+import { Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { firebaseApp } from "../firebase";
 
@@ -29,7 +30,9 @@ function Header() {
         <input placeholder="Search" />
       </div>
       <div className="header__right">
-        <button onClick={handleLogout}>Logout</button>
+        <Button variant="contained" color="secondary" onClick={handleLogout}>
+          Logout
+        </Button>
       </div>
     </div>
   );

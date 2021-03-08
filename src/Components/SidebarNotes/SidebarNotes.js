@@ -5,6 +5,8 @@ import List from "@material-ui/core/List";
 import { Divider, Button } from "@material-ui/core";
 import SidebarItemComponent from "../SidebarItem/SidebarItem";
 
+// Code followed from The Assembly on YouTube
+
 class SidebarComponent extends React.Component {
   constructor() {
     super();
