@@ -17,18 +17,18 @@ const ContactForm = (props) => {
   var [id, setId] = useState("");
 
   useEffect(() => {
-    // if (props.currentId === "")
-    //   setValues({
-    //     ...initialFieldValues,
-    //   });
-    // else
-    setValues({
-      projectName: props.projectName,
-      id: props.currentId,
-      programmingLanguage: props.programmingLanguage,
-      error: props.error,
-      solution: props.solution,
-    });
+    if (props.currentId === "")
+      setValues({
+        ...initialFieldValues,
+      });
+    else
+      setValues({
+        projectName: props.projectName,
+        id: props.currentId,
+        programmingLanguage: props.programmingLanguage,
+        error: props.error,
+        solution: props.solution,
+      });
   }, [props.currentId, props.journalObjects]);
 
   //Used to update input fields
@@ -40,6 +40,7 @@ const ContactForm = (props) => {
     });
   };
 
+  var form = document.getElementById("Form");
   //Used to submit form
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -49,23 +50,9 @@ const ContactForm = (props) => {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleFormSubmit}>
-      <div className="form-group input-group">
-        <div className="input-group-prepend">
-          <div className="input-group-text">
-            <i className="fas fa-user"></i>
-          </div>
-        </div>
-        <input
-          className="form-control"
-          placeholder="Project Name"
-          name="projectName"
-          value={values.projectName}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-row">
-        <div className="form-group input-group ">
+    <>
+      <form autoComplete="off" onSubmit={handleFormSubmit} className="Form">
+        <div className="form-group input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">
               <i className="fas fa-user"></i>
@@ -73,46 +60,56 @@ const ContactForm = (props) => {
           </div>
           <input
             className="form-control"
-            placeholder="Programming Language"
-            name="programmingLanguage"
-            value={values.programmingLanguage}
+            placeholder="Project Name"
+            name="projectName"
+            value={values.projectName}
             onChange={handleInputChange}
           />
         </div>
-      </div>
-      <div className="form-group">
-        {/* <div className="input-group-prepend">
-            <div className="input-group-text">
-              <i className="fas fa-user"></i>
+        <div className="form-row">
+          <div className="form-group input-group ">
+            <div className="input-group-prepend">
+              <div className="input-group-text">
+                <i className="fas fa-user"></i>
+              </div>
             </div>
-          </div> */}
-        <textarea
-          className="form-control"
-          placeholder="Error"
-          name="error"
-          value={values.error}
-          onChange={handleInputChange}
-        />
-      </div>
+            <input
+              className="form-control"
+              placeholder="Programming Language"
+              name="programmingLanguage"
+              value={values.programmingLanguage}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            placeholder="Error"
+            name="error"
+            value={values.error}
+            onChange={handleInputChange}
+          />
+        </div>
 
-      <div className="form-group">
-        <textarea
-          className="form-control"
-          placeholder="Solution"
-          name="solution"
-          value={values.solution}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="submit"
-          // value={props.currentId == "" ? "Save" : "Update"}
-          value="Submit"
-          className="btn btn-primary btn-block"
-        ></input>
-      </div>
-    </form>
+        <div className="form-group">
+          <textarea
+            className="form-control"
+            placeholder="Solution"
+            name="solution"
+            value={values.solution}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="submit"
+            value={props.currentId === "" ? "Save" : "Update"}
+            className="btn btn-primary btn-block"
+          ></input>
+        </div>
+      </form>
+    </>
   );
 };
 

@@ -37,6 +37,24 @@
   }
 }
 
+.container {
+  margin-top: 50px;
+  .row {
+    overflow-y: hidden;
+  }
+
+  .col-lg-4 {
+    margin-bottom: 20px;
+    .m-auto {
+      .card-body {
+        button {
+          background-color: #33475b;
+        }
+      }
+    }
+  }
+}
+
 .search_area {
   display: flex;
   justify-content: center;

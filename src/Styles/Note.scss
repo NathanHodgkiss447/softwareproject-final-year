@@ -11,8 +11,11 @@
   padding-top: 0;
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   .journal__header {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
   .col-md-5 {
     padding-left: 4%;
