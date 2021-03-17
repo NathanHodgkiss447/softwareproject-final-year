@@ -10,7 +10,8 @@ import Journal from "./Journal";
 import { v4 as uuidv4 } from "uuid";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import DeleteIcon from "@material-ui/icons/Delete";
-
+import { toast, ToastContainer } from "react-toastify";
+import { formatMs } from "@material-ui/core";
 //Followed tutorial from CodAffection
 
 const Contacts = () => {
@@ -46,13 +47,19 @@ const Contacts = () => {
   const addOrEdit = (e, id) => {
     if (currentId == "") {
       setCurrentId(id);
-      data.doc(id).set({
-        id: id,
-        projectName: e.projectName,
-        programmingLanguage: e.programmingLanguage,
-        error: e.error,
-        solution: e.solution,
-      });
+      data
+        .doc(id)
+        .set({
+          id: id,
+          projectName: e.projectName,
+          programmingLanguage: e.programmingLanguage,
+          error: e.error,
+          solution: e.solution,
+        })
+        .then(() => {
+          setCurrentId("");
+          toast.success("Document Created");
+        });
     } else {
       db.collection("journal")
         .doc(currentId)
@@ -63,8 +70,9 @@ const Contacts = () => {
           error: e.error,
           solution: e.solution,
         })
-        .then((docRef) => {
-          console.log("Document SET with ID: ", docRef.id);
+        .then(() => {
+          setCurrentId("");
+          toast.success("Document Updated");
         })
         .catch((error) => {
           console.error("Error adding document: ", error);
@@ -76,6 +84,10 @@ const Contacts = () => {
     data
       .doc(journal.id)
       .delete()
+      .then(() => {
+        setCurrentId("");
+        toast.error("Document Deleted");
+      })
       .catch((err) => {
         console.error(err);
       });
@@ -83,7 +95,8 @@ const Contacts = () => {
 
   return (
     <>
-      <div className="journal__header">
+      <ToastContainer />
+      <div className="journal__header" data-testid="journal-test">
         <h3>Programming Journal</h3>
       </div>
 

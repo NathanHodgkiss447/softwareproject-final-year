@@ -9,7 +9,12 @@ import SidebarResource from "./Components/SidebarResource";
 import Journal from "./Components/Journal";
 import Note from "./Components/Note";
 import alanBtn from "@alan-ai/alan-sdk-web";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import React, { useEffect, useState } from "react";
 import JournalEntry from "./Components/JournalEntry";
@@ -30,7 +35,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.title = "Smart Programming Journal";
+    document.title = "Smart Coding Journal";
+    <Switch>
+      <Route path="/journalEntry">
+        <JournalEntry />
+      </Route>
+    </Switch>;
   }, []);
 
   return (
@@ -47,6 +57,16 @@ function App() {
 
             <div className="app_body">
               <Sidebar />
+
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
+
+              <Switch>
+                <Route path="/home">
+                  <JournalEntry />
+                </Route>
+              </Switch>
 
               <Switch>
                 <Route path="/resources">

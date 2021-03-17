@@ -44,8 +44,15 @@ function Resources() {
         })
         .catch((err) => {
           setLoading(true);
-          toast.error(`${err.response.data.error.message}`);
+          // toast.error(`${err.response.data.error.message}`);
+          toast.error("Cannot find item");
         });
+    }
+  };
+
+  const onKeyDownHandler = (e) => {
+    if (e.keyCode === 13) {
+      handleSubmit();
     }
   };
 
@@ -53,8 +60,12 @@ function Resources() {
     console.log(cards);
     const items = cards.map((item, io) => {
       let thumbnail = "";
-      if (item.volumeInfo.imageLinks.thumbnail) {
-        thumbnail = item.volumeInfo.imageLinks.thumbnail;
+      try {
+        if (item.volumeInfo.imageLinks.thumbnail) {
+          thumbnail = item.volumeInfo.imageLinks.thumbnail;
+        }
+      } catch (err) {
+        console.log("Error finding thumbnail");
       }
 
       return (
@@ -73,6 +84,7 @@ function Resources() {
         </div>
       );
     });
+
     if (loading) {
       return (
         <div className="d-flex justify-content -center mt-3">
@@ -99,6 +111,7 @@ function Resources() {
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={onKeyDownHandler}
           />
           <InputGroupAddon addonType="append" onClick={handleSubmit}>
             <Button variant="contained" color="secondary">
