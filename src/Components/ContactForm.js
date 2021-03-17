@@ -51,7 +51,12 @@ const ContactForm = (props) => {
 
   return (
     <>
-      <form autoComplete="off" onSubmit={handleFormSubmit} className="Form">
+      <form
+        autoComplete="off"
+        onSubmit={handleFormSubmit}
+        className="Form"
+        data-testid="form-test"
+      >
         <div className="form-group input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">

@@ -85,6 +85,7 @@ const Contacts = () => {
       .doc(journal.id)
       .delete()
       .then(() => {
+        setCurrentId("");
         toast.error("Document Deleted");
       })
       .catch((err) => {
@@ -95,7 +96,7 @@ const Contacts = () => {
   return (
     <>
       <ToastContainer />
-      <div className="journal__header">
+      <div className="journal__header" data-testid="journal-test">
         <h3>Programming Journal</h3>
       </div>
 
