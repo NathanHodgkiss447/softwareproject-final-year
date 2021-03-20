@@ -7,8 +7,18 @@ import ContactForm from "../Components/ContactForm";
 test("Renders the correct journal form content", () => {
   // Render the component to the DOM
   render(<ContactForm />);
-  const todoElement = screen.getByTestId("form-test");
-  expect(todoElement).toBeInTheDocument();
+  const form = screen.getByTestId("form-test");
+  const placeholderName = screen.getByTestId("placeholder-name");
+  const placeholderLanguage = screen.getByTestId("placeholder-language");
+  const placeholderError = screen.getByTestId("placeholder-error");
+  const placeholderSolution = screen.getByTestId("placeholder-solution");
 
-  // Use DOM API's to make assertions
+  //Testing if form exists
+  expect(form).toBeInTheDocument();
+
+  //Testing to check for appropriate placeholders
+  expect(placeholderName.placeholder).toBe("Project Name");
+  expect(placeholderLanguage.placeholder).toBe("Programming Language");
+  expect(placeholderError.placeholder).toBe("Error");
+  expect(placeholderSolution.placeholder).toBe("Solution");
 });

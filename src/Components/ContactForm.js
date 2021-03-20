@@ -69,6 +69,7 @@ const ContactForm = (props) => {
             name="projectName"
             value={values.projectName}
             onChange={handleInputChange}
+            data-testid="placeholder-name"
           />
         </div>
         <div className="form-row">
@@ -84,6 +85,7 @@ const ContactForm = (props) => {
               name="programmingLanguage"
               value={values.programmingLanguage}
               onChange={handleInputChange}
+              data-testid="placeholder-language"
             />
           </div>
         </div>
@@ -94,6 +96,7 @@ const ContactForm = (props) => {
             name="error"
             value={values.error}
             onChange={handleInputChange}
+            data-testid="placeholder-error"
           />
         </div>
 
@@ -104,6 +107,7 @@ const ContactForm = (props) => {
             name="solution"
             value={values.solution}
             onChange={handleInputChange}
+            data-testid="placeholder-solution"
           />
         </div>
         <div className="form-group">
