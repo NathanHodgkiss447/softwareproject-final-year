@@ -101,20 +101,25 @@ function Resources() {
   };
 
   return (
-    <div className="search">
+    <div className="search" data-testid="search">
       <div className="journal__header">
         <h3>Resources</h3>
       </div>
-      <div className="search_area">
+      <div className="search_area" data-testid="search-input">
         <InputGroup size="lg" className="mb-3">
           <Input
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={onKeyDownHandler}
+            data-testid="search-input-bar"
           />
           <InputGroupAddon addonType="append" onClick={handleSubmit}>
-            <Button variant="contained" color="secondary">
+            <Button
+              variant="contained"
+              color="secondary"
+              data-testid="search-button"
+            >
               Search
             </Button>
           </InputGroupAddon>

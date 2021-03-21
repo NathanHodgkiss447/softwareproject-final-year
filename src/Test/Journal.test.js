@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { render, screen, cleanup } from "@testing-library/react";
-
+import renderer from "react-test-renderer";
 import Contacts from "../Components/Contacts";
-import { CardActions } from "@material-ui/core";
 
 test("Renders the correct journal content", () => {
   // Render the component to the DOM
@@ -21,6 +20,9 @@ test("Renders the correct journal content", () => {
   expect(errorHeading).toHaveTextContent("Error");
   expect(solutionHeading).toHaveTextContent("Solution");
   expect(actionsHeading).toHaveTextContent("Actions");
+});
 
-  // Use DOM API's to make assertions
+it("renders entire journal sections structure correctly", () => {
+  const contacts = renderer.create(<Contacts />).toJSON();
+  expect(contacts).toMatchSnapshot();
 });

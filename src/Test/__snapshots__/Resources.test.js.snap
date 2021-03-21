@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders entire resource sections structure correctly 1`] = `
+<div
+  className="search"
+  data-testid="search"
+>
+  <div
+    className="journal__header"
+  >
+    <h3>
+      Resources
+    </h3>
+  </div>
+  <div
+    className="search_area"
+    data-testid="search-input"
+  >
+    <div
+      className="mb-3 input-group input-group-lg"
+    >
+      <input
+        className="form-control"
+        data-testid="search-input-bar"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+      <div
+        className="input-group-append"
+        onClick={[Function]}
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+          data-testid="search-button"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            Search
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="d-flex"
+  >
+    <div
+      className="MuiFormGroup-root ml-5"
+    >
+      <input
+        className="form-control"
+        id="maxResults"
+        onChange={[Function]}
+        placeholder="Max Results"
+        type="number"
+        value={10}
+      />
+    </div>
+    <div
+      className="MuiFormGroup-root ml-5"
+    >
+      <input
+        className="form-control"
+        id="startIndex"
+        onChange={[Function]}
+        placeholder="Start Index"
+        type="number"
+        value={1}
+      />
+    </div>
+    <div
+      className="Toastify"
+    />
+  </div>
+  <div
+    className="container ,my-5"
+  >
+    <div
+      className="row"
+    />
+  </div>
+</div>
+`;
