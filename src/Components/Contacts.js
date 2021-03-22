@@ -131,7 +131,7 @@ const Contacts = () => {
                   <tr key={journal.id}>
                     <td>{journal.projectName}</td>
                     <td>{journal.programmingLanguage}</td>
-                    <td>{journal.error}</td>
+                    <td className="error">{journal.error}</td>
                     <td>{journal.solution}</td>
                     <td>
                       <a

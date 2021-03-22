@@ -5,6 +5,7 @@ import renderer from "react-test-renderer";
 
 import Resources from "../Components/Resources";
 
+//Rendering Test
 test("Renders the correct resources content", () => {
   render(<Resources />);
 
@@ -22,7 +23,7 @@ test("Renders the correct resources content", () => {
 });
 
 //Snapshot Test
-it("renders entire resource sections structure correctly", () => {
+it("DOM is structured correctly", () => {
   const resources = renderer.create(<Resources />).toJSON();
   expect(resources).toMatchSnapshot();
 });

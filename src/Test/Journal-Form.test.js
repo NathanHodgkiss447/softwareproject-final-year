@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { render, screen, cleanup } from "@testing-library/react";
-
+import renderer from "react-test-renderer";
 import ContactForm from "../Components/ContactForm";
+import { render, screen, cleanup } from "@testing-library/react";
 
 test("Renders the correct journal form content", () => {
   // Render the component to the DOM
@@ -21,4 +21,10 @@ test("Renders the correct journal form content", () => {
   expect(placeholderLanguage.placeholder).toBe("Programming Language");
   expect(placeholderError.placeholder).toBe("Error");
   expect(placeholderSolution.placeholder).toBe("Solution");
+});
+
+//Snapshot Test
+it("renders entire journal sections structure correctly", () => {
+  const journalForm = renderer.create(<ContactForm />).toJSON();
+  expect(journalForm).toMatchSnapshot();
 });

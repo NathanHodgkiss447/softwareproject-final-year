@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders entire resource sections structure correctly 1`] = `
+exports[`DOM is structured correctly 1`] = `
 <div
   className="search"
   data-testid="search"

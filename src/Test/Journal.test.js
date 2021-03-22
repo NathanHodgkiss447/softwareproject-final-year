@@ -22,6 +22,7 @@ test("Renders the correct journal content", () => {
   expect(actionsHeading).toHaveTextContent("Actions");
 });
 
+//Snapshot Test
 it("renders entire journal sections structure correctly", () => {
   const contacts = renderer.create(<Contacts />).toJSON();
   expect(contacts).toMatchSnapshot();
