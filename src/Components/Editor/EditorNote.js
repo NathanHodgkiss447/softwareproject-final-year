@@ -56,7 +56,7 @@ class EditorComponent extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.editorContainer}>
+      <div className={classes.editorContainer} data-testid="editorContainer">
         <BorderColorIcon className={classes.editIcon} />
         <input
           className={classes.titleInput}

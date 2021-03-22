@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders entire journal sections structure correctly 1`] = `
+<form
+  autoComplete="off"
+  className="Form"
+  data-testid="form-test"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group input-group"
+  >
+    <div
+      className="input-group-prepend"
+    >
+      <div
+        className="input-group-text"
+      >
+        <i
+          className="fas fa-user"
+        />
+      </div>
+    </div>
+    <input
+      className="form-control"
+      data-testid="placeholder-name"
+      name="projectName"
+      onChange={[Function]}
+      placeholder="Project Name"
+      value=""
+    />
+  </div>
+  <div
+    className="form-row"
+  >
+    <div
+      className="form-group input-group "
+    >
+      <div
+        className="input-group-prepend"
+      >
+        <div
+          className="input-group-text"
+        >
+          <i
+            className="fas fa-user"
+          />
+        </div>
+      </div>
+      <input
+        className="form-control"
+        data-testid="placeholder-language"
+        name="programmingLanguage"
+        onChange={[Function]}
+        placeholder="Programming Language"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <textarea
+      className="form-control"
+      data-testid="placeholder-error"
+      name="error"
+      onChange={[Function]}
+      placeholder="Error"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <textarea
+      className="form-control"
+      data-testid="placeholder-solution"
+      name="solution"
+      onChange={[Function]}
+      placeholder="Solution"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <input
+      className="btn btn-primary btn-block"
+      type="submit"
+      value="Update"
+    />
+  </div>
+</form>
+`;

@@ -118,11 +118,11 @@ const Contacts = () => {
           <table className="table table-borderless table-stripped">
             <thead className="thead-light">
               <tr>
-                <th>Project Name</th>
-                <th>Programming Language</th>
-                <th>Error</th>
-                <th>Solution</th>
-                <th>Actions</th>
+                <th data-testid="heading-name">Project Name</th>
+                <th data-testid="heading-language">Programming Language</th>
+                <th data-testid="heading-error">Error</th>
+                <th data-testid="heading-solution">Solution</th>
+                <th data-testid="heading-actions">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -131,7 +131,7 @@ const Contacts = () => {
                   <tr key={journal.id}>
                     <td>{journal.projectName}</td>
                     <td>{journal.programmingLanguage}</td>
-                    <td>{journal.error}</td>
+                    <td className="error">{journal.error}</td>
                     <td>{journal.solution}</td>
                     <td>
                       <a

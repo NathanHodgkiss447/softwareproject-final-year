@@ -1,9 +1,26 @@
 .row {
   flex: 1;
   .col-md-5 {
+    max-width: 35%;
     .form-group {
       textarea {
         height: 150px;
+      }
+    }
+  }
+  .col-md-7 {
+    overflow-wrap: anywhere;
+    flex: 1 0 58.333333%;
+    max-width: 100%;
+    .table {
+      tbody {
+        .error {
+          overflow-y: scroll;
+          width: 30%;
+        }
+        tr {
+          border-bottom: 1px solid black;
+        }
       }
     }
   }

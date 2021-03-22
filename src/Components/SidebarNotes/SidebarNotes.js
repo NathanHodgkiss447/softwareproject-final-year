@@ -30,11 +30,18 @@ class SidebarComponent extends React.Component {
     // console.log(notes);
     if (notes) {
       return (
-        <div className={classes.sidebarContainer}>
-          <Button onClick={this.newNote} className={classes.newNoteBtn}>
+        <div
+          className={classes.sidebarContainer}
+          data-testid="sidebarContainer"
+        >
+          <Button
+            onClick={this.newNote}
+            className={classes.newNoteBtn}
+            data-testid="newNoteBtn"
+          >
             New Note
           </Button>
-          <List>
+          <List data-testid="noteList">
             {notes.map((_note, _index) => {
               return (
                 <div key={_index}>

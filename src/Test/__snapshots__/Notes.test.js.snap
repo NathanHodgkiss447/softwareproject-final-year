@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders editor correctly 1`] = `
+<div
+  className="app-container"
+>
+  <div>
+    Loading
+  </div>
+</div>
+`;
