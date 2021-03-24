@@ -43,6 +43,7 @@ function App() {
     </Switch>;
   }, []);
 
+  //Change user variable to opposite when writing tests to bypass login in development
   return (
     <div className="App">
       <Router>

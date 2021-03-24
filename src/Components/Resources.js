@@ -119,6 +119,7 @@ function Resources() {
               variant="contained"
               color="secondary"
               data-testid="search-button"
+              data-cy="search"
             >
               Search
             </Button>
