@@ -55,14 +55,12 @@ const ContactForm = (props) => {
   };
 
   const handleAnalyse = () => {
-    //NLP  TESTING
-    let input = nlp(values.error);
+    var input = nlp(values.error);
     let result = input.sentences().terms().out("array");
     let numberArray = result.filter(Number);
     let numberCollection = numberArray.map(Number);
     let number = numberCollection[0];
     let text = "";
-    console.log(number);
 
     // HTTP Handling
     switch (number) {
@@ -388,11 +386,35 @@ const ContactForm = (props) => {
     }
 
     //Java Common Errors
+    if (values.programmingLanguage === "Java") {
+      var error = "unclosed string literal";
+      var error2 = "illegal start of expression";
 
-    //Python Common Errors
+      var javaInput = nlp(values.error).match(`(${error}|${error2})`).text();
 
-    //JavaScript Common Errors
+      console.log(javaInput);
+
+      switch (javaInput) {
+        default:
+          setTooltip("No Suggestion Available");
+          break;
+        case "unclosed string literal":
+          setTooltip(
+            "The “unclosed string literal” error message is created when the string literal ends without quotation marks, and the message will appear on the same line as the error"
+          );
+          break;
+        case "illegal start of expression":
+          setTooltip(
+            "The compiler expects to find an expression and cannot find it because the syntax does not match expectations"
+          );
+          break;
+      }
+    }
   };
+
+  //Python Common Errors
+
+  //JavaScript Common Errors
 
   return (
     <>
