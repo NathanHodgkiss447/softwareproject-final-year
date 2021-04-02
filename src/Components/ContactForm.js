@@ -61,6 +61,17 @@ const ContactForm = (props) => {
     let numberCollection = numberArray.map(Number);
     let number = numberCollection[0];
     let text = "";
+    let test = "";
+    let solutionCheck;
+
+    if (values.solution == "None") {
+      solutionCheck = "None";
+    } else if (values.solution == "") {
+      solutionCheck = "empty";
+    } else {
+      solutionCheck = "other";
+    }
+    console.log(solutionCheck);
 
     // HTTP Handling
     switch (number) {
@@ -386,13 +397,90 @@ const ContactForm = (props) => {
     }
 
     //Java Common Errors
-    if (values.programmingLanguage === "Java") {
-      var error = "unclosed string literal";
-      var error2 = "illegal start of expression";
+    if (values.programmingLanguage === "Java" && solutionCheck !== "other") {
+      var stringLiteralError = nlp(values.error)
+        .match("unclosed string literal")
+        .text();
+      var illegalExpressionError = nlp(values.error)
+        .match("illegal start of expression")
+        .text();
+      var symbolError = nlp(values.error).match("cannot find symbol").text();
+      var typeError = nlp(values.error).match("incompatible types").text();
+      var invalidMethod = nlp(values.error)
+        .match("invalid method declaration return type required")
+        .text();
+      var returnStatementError = nlp(values.error)
+        .match("missing return statement")
+        .text();
+      var precisionError = nlp(values.error)
+        .match("possible loss of precision")
+        .text();
+      var endOfFileError = nlp(values.error)
+        .match("reached end of file while parsing")
+        .text();
+      var initilisationError = nlp(values.error)
+        .match("variable might not have been initialized")
+        .text();
+      var incovertibleTypesError = nlp(values.error)
+        .match("inconvertible types")
+        .text();
+      var missingReturnError = nlp(values.error)
+        .match("missing return value")
+        .text();
+      var cannotReturnValue = nlp(values.error)
+        .match("cannot return a value from method whose result type is void")
+        .text();
+      var nonStaticVariable = nlp(values.error)
+        .match("non-static variable cannot be referenced from a static context")
+        .text();
+      var nonStaticMethod = nlp(values.error)
+        .match("non-static method cannot be referenced from a static context")
+        .text();
+      let javaInput;
 
-      var javaInput = nlp(values.error).match(`(${error}|${error2})`).text();
-
-      console.log(javaInput);
+      if (stringLiteralError == "unclosed string literal") {
+        javaInput = stringLiteralError;
+      } else if (illegalExpressionError == "illegal start of expression") {
+        javaInput = illegalExpressionError;
+      } else if (symbolError == "cannot find symbol") {
+        javaInput = symbolError;
+      } else if (typeError == "incompatible types") {
+        javaInput = typeError;
+      } else if (
+        invalidMethod == "invalid method declaration return type required"
+      ) {
+        javaInput = invalidMethod;
+      } else if (returnStatementError == "missing return statement") {
+        javaInput = returnStatementError;
+        console.log(javaInput);
+      } else if (precisionError == "possible loss of precision") {
+        javaInput = precisionError;
+      } else if (endOfFileError == "reached end of file while parsing") {
+        javaInput = endOfFileError;
+      } else if (
+        initilisationError == "variable might not have been initialized"
+      ) {
+        javaInput = initilisationError;
+      } else if (incovertibleTypesError == "inconvertible types") {
+        javaInput = incovertibleTypesError;
+      } else if (missingReturnError == "missing return value") {
+        javaInput = missingReturnError;
+      } else if (
+        cannotReturnValue ==
+        "cannot return a value from method whose result type is void"
+      ) {
+        javaInput = cannotReturnValue;
+      } else if (
+        nonStaticVariable ==
+        "non static variable cannot be referenced from a static context"
+      ) {
+        javaInput = nonStaticVariable;
+      } else if (
+        nonStaticMethod ==
+        "non static method cannot be referenced from a static context"
+      ) {
+        javaInput = nonStaticMethod;
+      }
 
       switch (javaInput) {
         default:
@@ -400,12 +488,78 @@ const ContactForm = (props) => {
           break;
         case "unclosed string literal":
           setTooltip(
-            "The “unclosed string literal” error message is created when the string literal ends without quotation marks, and the message will appear on the same line as the error"
+            `The “unclosed string literal” error message is created when the string literal ends without quotation marks, and the message will appear on the same line as the error`
           );
           break;
         case "illegal start of expression":
           setTooltip(
             "The compiler expects to find an expression and cannot find it because the syntax does not match expectations"
+          );
+          break;
+        case "cannot find symbol":
+          setTooltip(`There are many reasons you might receive the cannot find symbol message
+                      - The spelling of the identifier when declared may not be the same as when it is used in the code.
+                      - The variable was never declared.
+                      - The variable is not being used in the same scope it was declared.`);
+          break;
+
+        case "incompatible types":
+          setTooltip(`“Incompatible types” is an error in logic that occurs when an assignment statement tries to pair a variable with an expression of types
+                    It often comes when the code tries to place a text string into an integer`);
+          break;
+        case "invalid method declaration return type required":
+          setTooltip(
+            `This Java software error message means the return type of a method was not explicitly stated in the method signature`
+          );
+          break;
+        case "missing return statement":
+          setTooltip(
+            "The “missing return statement” message occurs when a method does not have a return statement. Each method that returns a value (a non-void type) must have a statement that literally returns that value so it can be called outside the method."
+          );
+          break;
+        case "possible loss of precision":
+          setTooltip(
+            "Possible loss of precision” occurs when more information is assigned to a variable than it can hold. If this happens, pieces will be thrown out."
+          );
+          break;
+
+        case "reached end of file while parsing":
+          setTooltip(
+            "This error message usually occurs in Java when the program is missing the closing curly brace (“}”). Sometimes it can be quickly fixed by placing it at the end of the code."
+          );
+          break;
+
+        case "variable might not have been initialized":
+          setTooltip(
+            "This occurs when a local variable declared within a method has not been initialized. It can occur when a variable without an initial value is part of an if statement."
+          );
+          break;
+
+        case "inconvertible types":
+          setTooltip(
+            "The “inconvertible types” error occurs when the Java code tries to perform an illegal conversion."
+          );
+          break;
+
+        case "missing return value":
+          setTooltip(
+            "You’ll get the “missing return value” message when the return statement includes an incorrect type."
+          );
+          break;
+        case "cannot return a value from method whose result type is void":
+          setTooltip(
+            "This Java error occurs when a void method tries to return any value. Often this is fixed by changing to method signature to match the type in the return statement"
+          );
+          break;
+        case "non static variable cannot be referenced from a static context":
+          setTooltip(
+            "This error occurs when the compiler tries to access non-static variables from a static method"
+          );
+          break;
+
+        case "non static method cannot be referenced from a static context":
+          setTooltip(
+            "This issue occurs when the Java code tries to call a non-static method in a non-static class"
           );
           break;
       }
