@@ -64,6 +64,7 @@ const ContactForm = (props) => {
     let test = "";
     let solutionCheck;
 
+    // First Check  --- Test to see if there is a use provided solution
     if (values.solution == "None") {
       solutionCheck = "None";
     } else if (values.solution == "") {
@@ -71,7 +72,8 @@ const ContactForm = (props) => {
     } else {
       solutionCheck = "other";
     }
-    console.log(solutionCheck);
+
+    //Second Check --- Test for the language IF solutionCheck variable is not "other"
 
     // HTTP Handling
     switch (number) {
@@ -488,7 +490,7 @@ const ContactForm = (props) => {
           break;
         case "unclosed string literal":
           setTooltip(
-            `The “unclosed string literal” error message is created when the string literal ends without quotation marks, and the message will appear on the same line as the error`
+            `Java Error: The “unclosed string literal” error message is created when the string literal ends without quotation marks, and the message will appear on the same line as the error`
           );
           break;
         case "illegal start of expression":
@@ -497,78 +499,114 @@ const ContactForm = (props) => {
           );
           break;
         case "cannot find symbol":
-          setTooltip(`There are many reasons you might receive the cannot find symbol message
+          setTooltip(`Java Error: There are many reasons you might receive the cannot find symbol message
                       - The spelling of the identifier when declared may not be the same as when it is used in the code.
                       - The variable was never declared.
                       - The variable is not being used in the same scope it was declared.`);
           break;
 
         case "incompatible types":
-          setTooltip(`“Incompatible types” is an error in logic that occurs when an assignment statement tries to pair a variable with an expression of types
+          setTooltip(`Java Error: “Incompatible types” is an error in logic that occurs when an assignment statement tries to pair a variable with an expression of types
                     It often comes when the code tries to place a text string into an integer`);
           break;
         case "invalid method declaration return type required":
           setTooltip(
-            `This Java software error message means the return type of a method was not explicitly stated in the method signature`
+            `Java Error: This Java software error message means the return type of a method was not explicitly stated in the method signature`
           );
           break;
         case "missing return statement":
           setTooltip(
-            "The “missing return statement” message occurs when a method does not have a return statement. Each method that returns a value (a non-void type) must have a statement that literally returns that value so it can be called outside the method."
+            "Java Error: The “missing return statement” message occurs when a method does not have a return statement. Each method that returns a value (a non-void type) must have a statement that literally returns that value so it can be called outside the method."
           );
           break;
         case "possible loss of precision":
           setTooltip(
-            "Possible loss of precision” occurs when more information is assigned to a variable than it can hold. If this happens, pieces will be thrown out."
+            "Java Error: Possible loss of precision” occurs when more information is assigned to a variable than it can hold. If this happens, pieces will be thrown out."
           );
           break;
 
         case "reached end of file while parsing":
           setTooltip(
-            "This error message usually occurs in Java when the program is missing the closing curly brace (“}”). Sometimes it can be quickly fixed by placing it at the end of the code."
+            "Java Error: This error message usually occurs in Java when the program is missing the closing curly brace (“}”). Sometimes it can be quickly fixed by placing it at the end of the code."
           );
           break;
 
         case "variable might not have been initialized":
           setTooltip(
-            "This occurs when a local variable declared within a method has not been initialized. It can occur when a variable without an initial value is part of an if statement."
+            "Java Error: This occurs when a local variable declared within a method has not been initialized. It can occur when a variable without an initial value is part of an if statement."
           );
           break;
 
         case "inconvertible types":
           setTooltip(
-            "The “inconvertible types” error occurs when the Java code tries to perform an illegal conversion."
+            "Java Error: The “inconvertible types” error occurs when the Java code tries to perform an illegal conversion."
           );
           break;
 
         case "missing return value":
           setTooltip(
-            "You’ll get the “missing return value” message when the return statement includes an incorrect type."
+            "Java Error: You’ll get the “missing return value” message when the return statement includes an incorrect type."
           );
           break;
         case "cannot return a value from method whose result type is void":
           setTooltip(
-            "This Java error occurs when a void method tries to return any value. Often this is fixed by changing to method signature to match the type in the return statement"
+            "Java Error: This Java error occurs when a void method tries to return any value. Often this is fixed by changing to method signature to match the type in the return statement"
           );
           break;
         case "non static variable cannot be referenced from a static context":
           setTooltip(
-            "This error occurs when the compiler tries to access non-static variables from a static method"
+            "Java Error: This error occurs when the compiler tries to access non-static variables from a static method"
           );
           break;
 
         case "non static method cannot be referenced from a static context":
           setTooltip(
-            "This issue occurs when the Java code tries to call a non-static method in a non-static class"
+            "Java Error: This issue occurs when the Java code tries to call a non-static method in a non-static class"
           );
           break;
       }
     }
+
+    //Python Common Errors
+    if (values.programmingLanguage === "Python" && solutionCheck !== "other") {
+      let pythonInput;
+      var pythonAttributeError = nlp(values.error)
+        .match("attribute error")
+        .text();
+      var pythonSyntaxError = nlp(values.error).match("SyntaxError").text();
+
+      console.log(pythonSyntaxError);
+      //Checking for error
+      if (pythonAttributeError == "attribute error") {
+        pythonInput = pythonAttributeError;
+      } else if (pythonSyntaxError == "SyntaxError") {
+        pythonInput = pythonSyntaxError;
+      } else {
+        pythonInput = "";
+      }
+
+      console.log(pythonInput);
+
+      switch (pythonInput) {
+        default:
+          setTooltip("No suggestion available");
+          break;
+
+        case "attribute error":
+          setTooltip(
+            "Python Error: You are calling a method on the wrong type of object"
+          );
+          break;
+
+        case "SyntaxError":
+          setTooltip(
+            "Python Error: When the proper syntax of the language is not followed then syntax error is thrown, check for missed semi-colons etc."
+          );
+      }
+    }
+
+    //JavaScript Common Errors
   };
-
-  //Python Common Errors
-
-  //JavaScript Common Errors
 
   return (
     <>
