@@ -1,5 +1,7 @@
 .row {
   flex: 1;
+  margin-right: 0px;
+  overflow-y: hidden;
   .col-md-5 {
     max-width: 35%;
     .form-group {

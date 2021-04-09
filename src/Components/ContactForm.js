@@ -73,8 +73,6 @@ const ContactForm = (props) => {
       solutionCheck = "other";
     }
 
-    //Second Check --- Test for the language IF solutionCheck variable is not "other"
-
     // HTTP Handling
     switch (number) {
       default:
@@ -440,50 +438,52 @@ const ContactForm = (props) => {
         .text();
       let javaInput;
 
-      if (stringLiteralError == "unclosed string literal") {
+      //Checking for what error occured
+      if (stringLiteralError === "unclosed string literal") {
         javaInput = stringLiteralError;
-      } else if (illegalExpressionError == "illegal start of expression") {
+      } else if (illegalExpressionError === "illegal start of expression") {
         javaInput = illegalExpressionError;
-      } else if (symbolError == "cannot find symbol") {
+      } else if (symbolError === "cannot find symbol") {
         javaInput = symbolError;
-      } else if (typeError == "incompatible types") {
+      } else if (typeError === "incompatible types") {
         javaInput = typeError;
       } else if (
-        invalidMethod == "invalid method declaration return type required"
+        invalidMethod === "invalid method declaration return type required"
       ) {
         javaInput = invalidMethod;
-      } else if (returnStatementError == "missing return statement") {
+      } else if (returnStatementError === "missing return statement") {
         javaInput = returnStatementError;
         console.log(javaInput);
-      } else if (precisionError == "possible loss of precision") {
+      } else if (precisionError === "possible loss of precision") {
         javaInput = precisionError;
-      } else if (endOfFileError == "reached end of file while parsing") {
+      } else if (endOfFileError === "reached end of file while parsing") {
         javaInput = endOfFileError;
       } else if (
-        initilisationError == "variable might not have been initialized"
+        initilisationError === "variable might not have been initialized"
       ) {
         javaInput = initilisationError;
-      } else if (incovertibleTypesError == "inconvertible types") {
+      } else if (incovertibleTypesError === "inconvertible types") {
         javaInput = incovertibleTypesError;
-      } else if (missingReturnError == "missing return value") {
+      } else if (missingReturnError === "missing return value") {
         javaInput = missingReturnError;
       } else if (
-        cannotReturnValue ==
+        cannotReturnValue ===
         "cannot return a value from method whose result type is void"
       ) {
         javaInput = cannotReturnValue;
       } else if (
-        nonStaticVariable ==
+        nonStaticVariable ===
         "non static variable cannot be referenced from a static context"
       ) {
         javaInput = nonStaticVariable;
       } else if (
-        nonStaticMethod ==
+        nonStaticMethod ===
         "non static method cannot be referenced from a static context"
       ) {
         javaInput = nonStaticMethod;
       }
 
+      //Switch statement for setting the tooltip
       switch (javaInput) {
         default:
           setTooltip("No Suggestion Available");
@@ -574,22 +574,53 @@ const ContactForm = (props) => {
         .match("attribute error")
         .text();
       var pythonSyntaxError = nlp(values.error).match("SyntaxError").text();
+      var keyError = nlp(values.error).match("KeyError").text();
+      var nameError = nlp(values.error).match("NameError").text();
+      var runtimeError = nlp(values.error).match("RuntimeError").text();
+      var indexError = nlp(values.error).match("IndexError").text();
+      var indentationError = nlp(values.error).match("IndentationError").text();
+      var fileError = nlp(values.error).match("FileNotFoundError").text();
+      var importError = nlp(values.error).match("ImportError").text();
+      var pythonTypeError = nlp(values.error).match("TypeError").text();
+      var valueError = nlp(values.error).match("ValueError").text();
+      var referenceError = nlp(values.error).match("ReferenceError").text();
+      var systemError = nlp(values.error).match("SystemError").text();
 
-      console.log(pythonSyntaxError);
       //Checking for error
-      if (pythonAttributeError == "attribute error") {
+      if (pythonAttributeError === "attribute error") {
         pythonInput = pythonAttributeError;
-      } else if (pythonSyntaxError == "SyntaxError") {
+      } else if (pythonSyntaxError === "SyntaxError") {
         pythonInput = pythonSyntaxError;
-      } else {
-        pythonInput = "";
+      } else if (keyError === "KeyError") {
+        pythonInput = keyError;
+      } else if (nameError === "NameError") {
+        pythonInput = nameError;
+      } else if (runtimeError === "RunTimeError") {
+        pythonInput = runtimeError;
+      } else if (indexError === "IndexError") {
+        pythonInput = indexError;
+      } else if (indentationError === "IndentationError") {
+        pythonInput = indentationError;
+      } else if (fileError === "FileNotFoundError") {
+        pythonInput = fileError;
+      } else if (importError === "ImportError") {
+        pythonInput = importError;
+      } else if (pythonTypeError === "TypeError") {
+        pythonInput = typeError;
+      } else if (valueError === "ValueError") {
+        pythonInput = valueError;
+      } else if (referenceError === "ReferenceError") {
+        pythonInput = referenceError;
+      } else if (systemError === "SystemError") {
+        pythonInput = systemError;
       }
 
-      console.log(pythonInput);
-
+      //Switch statement to set the tooltip
       switch (pythonInput) {
         default:
-          setTooltip("No suggestion available");
+          setTooltip(
+            "No suggestion available - Ensure any errors are in their original form provided by IDE/console."
+          );
           break;
 
         case "attribute error":
@@ -602,10 +633,119 @@ const ContactForm = (props) => {
           setTooltip(
             "Python Error: When the proper syntax of the language is not followed then syntax error is thrown, check for missed semi-colons etc."
           );
+          break;
+
+        case "KeyError":
+          setTooltip(
+            "Python Error: The key error is thrown when a key is not found."
+          );
+          break;
+        case "NameError":
+          setTooltip(
+            "Python Error: The Name Error is raised when a variable is not found in the local or global scope - check where you are defining your variables."
+          );
+          break;
+        case "RuntimeError":
+          setTooltip(
+            "Python Error: A runtime occurs when the error raised does not fall into a standard category."
+          );
+          break;
+        case "IndexError":
+          setTooltip(
+            "Python Error: Raised when the index of a sequence is out of range, often the index won't exist in the array you are working with."
+          );
+          break;
+        case "IndentationError":
+          setTooltip(
+            "Python Error: Indendation Error is raised when your code is not indendated correctly, check your code for any white space issues."
+          );
+          break;
+        case "FileNotFoundError":
+          setTooltip(
+            "Python Error: The file not found error often results when a pathname has been specified incorrectly."
+          );
+          break;
+        case "ImportError":
+          setTooltip(
+            "Python Error: The import error is raised when an imported module is not found - double check all imports at the top of your scripts."
+          );
+          break;
+        case "TypeError":
+          setTooltip(
+            "Python Error: The type error is thrown when an operation or function is applied to an object of an inappropriate type"
+          );
+          break;
+        case "ValueError":
+          setTooltip(
+            "Python Error: The value error is thrown when a function's argument is of an inappropriate type, double check your function arguements for invalid types."
+          );
+          break;
+        case "ReferenceError":
+          setTooltip(
+            "Python Error: The reference error is  raised when a weak reference proxy is used to access a garbage collected referent."
+          );
+          break;
+
+        case "SystemError":
+          setTooltip(
+            "Python Error: The system error is raised when the interpreter detects an internal error "
+          );
+          break;
       }
     }
 
     //JavaScript Common Errors
+    if (
+      values.programmingLanguage === "JavaScript" &&
+      solutionCheck !== "other"
+    ) {
+      let javaScriptInput;
+      var internalError = nlp(values.error).match("InternalError").text();
+      var rangeError = nlp(values.error).match("RangeError").text();
+      var javaScriptReferenceError = nlp(values.error)
+        .match("ReferenceError")
+        .text();
+      var javaScriptSyntaxError = nlp(values.error).match("SyntaxError").text();
+
+      //Checking for which error has occured
+      if (internalError === "InternalError") {
+        javaScriptInput = internalError;
+      } else if (rangeError === "RangeError") {
+        javaScriptInput = rangeError;
+      } else if (javaScriptReferenceError === "ReferenceError") {
+        javaScriptInput = javaScriptReferenceError;
+      } else {
+        javaScriptInput = javaScriptSyntaxError;
+      }
+
+      //Switch statement to set the tooltip
+      switch (javaScriptInput) {
+        default:
+          setTooltip(
+            "No suggestion available - Ensure any errors are in their original form provided by IDE/console."
+          );
+          break;
+        case "InternalError":
+          setTooltip(
+            "JavaScript Error: The internal error often occurs when something is too large, EG: too many switch cases, too much recursion, too many parantheses in regular expression"
+          );
+          break;
+        case "RangeError":
+          setTooltip(
+            "JavaScript Error: A Range Error is thrown when trying to pass a value as an argument to a function that does not allow a range that includes the value."
+          );
+          break;
+        case "ReferenceError":
+          setTooltip(
+            "JavaScript Error: A ReferenceError object represents an error when a non-existent variable is referenced, make sure to check your variable names. "
+          );
+          break;
+        case "SyntaxError":
+          setTooltip(
+            "JavaScript Error: A SyntaxError object represents an error when trying to interpret syntactically invalid code. Double check for brackets semi-colons."
+          );
+      }
+    }
   };
 
   return (
