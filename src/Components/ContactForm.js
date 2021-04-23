@@ -4,6 +4,8 @@ import ReactTooltip from "react-tooltip";
 import nlp from "compromise";
 import { v4 as uuidv4 } from "uuid";
 import InfoIcon from "@material-ui/icons/Info";
+import IconWithTooltip from "icon-with-tooltip";
+import "../Styles/tooltip.scss";
 
 //Followed tutorial from CodAffection
 
@@ -771,6 +773,12 @@ const ContactForm = (props) => {
             onChange={handleInputChange}
             data-testid="placeholder-name"
           />
+          <InfoIcon data-tip data-for="projectNameTip" />
+          <span classaName="tooltip">
+            <ReactTooltip id="projectNameTip" place="top" effect="solid">
+              Please enter your project name.
+            </ReactTooltip>
+          </span>
         </div>
         <div className="form-row">
           <div className="form-group input-group ">
@@ -787,6 +795,12 @@ const ContactForm = (props) => {
               onChange={handleInputChange}
               data-testid={tooltip}
             />
+            <InfoIcon data-tip data-for="languageTip" />
+            <span classaName="tooltip">
+              <ReactTooltip id="languageTip" place="top" effect="solid">
+                Please enter the programming language used in this project.
+              </ReactTooltip>
+            </span>
           </div>
         </div>
         <div className="form-group">
@@ -799,6 +813,12 @@ const ContactForm = (props) => {
             data-testid="placeholder-error"
             data-tip={tooltip}
           />
+          <InfoIcon data-tip data-for="errorTip" />
+          <span classaName="tooltip">
+            <ReactTooltip id="errorTip" place="top" effect="solid">
+              Please enter the error you have encountered.
+            </ReactTooltip>
+          </span>
         </div>
 
         <div className="form-group">
@@ -810,9 +830,22 @@ const ContactForm = (props) => {
             onChange={handleInputChange}
             data-testid="placeholder-solution"
           />
-          <ReactTooltip place="right" type="dark" effect="float" />
+          <InfoIcon data-tip data-for="solutionTip" />
+          <span classaName="tooltip">
+            <ReactTooltip
+              className="tooltip"
+              id="solutionTip"
+              place="top"
+              effect="solid"
+            >
+              Please enter your solution, if you would like a suggestion, leave
+              the input blank or input "None", then click the "Analyse" button.{" "}
+              <br />
+              Current Supported Languages: Java, JavaScript, Python.
+            </ReactTooltip>
+          </span>
         </div>
-
+        <ReactTooltip id="analyseInput"></ReactTooltip>
         <div className="form-group">
           <input
             type="submit"
