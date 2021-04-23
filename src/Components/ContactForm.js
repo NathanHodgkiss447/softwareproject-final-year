@@ -841,11 +841,14 @@ const ContactForm = (props) => {
               Please enter your solution, if you would like a suggestion, leave
               the input blank or input "None", then click the "Analyse" button.{" "}
               <br />
-              Current Supported Languages: Java, JavaScript, Python.
+              <b>
+                Current Supported Languages: Java, JavaScript, Python, HTTP
+                Error Codes.
+              </b>
             </ReactTooltip>
           </span>
         </div>
-        <ReactTooltip id="analyseInput"></ReactTooltip>
+        <ReactTooltip data-tip={tooltip}></ReactTooltip>
         <div className="form-group">
           <input
             type="submit"
