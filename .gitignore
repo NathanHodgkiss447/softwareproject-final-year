@@ -25,3 +25,6 @@ yarn-error.log*
 mainconfig.js
 
 .eslintcache
+.vscode/settings.json
+.eslintcache
+.env

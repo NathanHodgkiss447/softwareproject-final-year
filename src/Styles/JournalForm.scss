@@ -1,8 +1,15 @@
+.icon-info {
+  margin-top: 4px;
+}
+
 .row {
   flex: 1;
+  margin-right: 0px;
+  overflow-y: hidden;
   .col-md-5 {
     max-width: 35%;
     .form-group {
+      display: flex;
       textarea {
         height: 150px;
       }
@@ -13,10 +20,16 @@
     flex: 1 0 58.333333%;
     max-width: 100%;
     .table {
+      display: block;
+      height: 85%;
+      overflow-y: scroll;
       tbody {
         .error {
           overflow-y: scroll;
           width: 30%;
+        }
+        .solution {
+          width: 240px;
         }
         tr {
           border-bottom: 1px solid black;

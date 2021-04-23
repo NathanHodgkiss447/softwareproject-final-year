@@ -132,7 +132,7 @@ const Contacts = () => {
                     <td>{journal.projectName}</td>
                     <td>{journal.programmingLanguage}</td>
                     <td className="error">{journal.error}</td>
-                    <td>{journal.solution}</td>
+                    <td className="solution">{journal.solution}</td>
                     <td>
                       <a
                         className="btn text-primary"
