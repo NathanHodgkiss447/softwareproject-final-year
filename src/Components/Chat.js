@@ -23,6 +23,7 @@ function Chat() {
   const [roomDetails, setRoomDetails] = useState(null);
   const [roomMessages, setRoomMessages] = useState([]);
 
+  //Displaying user messages on component load
   useEffect(() => {
     if (roomId) {
       db.collection("rooms")
