@@ -5,7 +5,15 @@ import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 
-// Code followed from The Assembly on YouTube
+/*
+ * Class Name: EditNote.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=dGM_T5gqmrA
+ *
+ */
 
 class EditorComponent extends React.Component {
   constructor() {

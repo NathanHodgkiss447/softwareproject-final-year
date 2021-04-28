@@ -17,10 +17,16 @@ function Resources() {
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
 
-  //Making the API call
-  {
-    /* https://developers.google.com/books/docs/v1/using#PerformingSearch */
-  }
+  /*
+   * Class Name: BookCards.js
+   * Date: 28/04/2021
+   *
+   * @author Nathan Hodgkiss, X17381176
+   *
+   * @reference https://www.youtube.com/watch?v=kL3H-wTWPSQ
+   * @reference https://developers.google.com/books/docs/v1/using#PerformingSearch
+   */
+
   const handleSubmit = () => {
     setLoading(true);
     if (maxResults > 40 || maxResults < 1) {
@@ -44,7 +50,6 @@ function Resources() {
         })
         .catch((err) => {
           setLoading(true);
-          // toast.error(`${err.response.data.error.message}`);
           toast.error("Cannot find item");
         });
     }

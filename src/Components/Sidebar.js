@@ -4,20 +4,25 @@ import { Link } from "react-router-dom";
 import "../Styles/Sidebar.scss";
 import SidebarOption from "./SidebarOption";
 import SidebarResource from "./SidebarResource";
-
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
 import InsertCommentIcon from "@material-ui/icons/InsertComment";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
-
 import db from "../firebase";
 import { firebaseApp } from "../firebase";
 import { useStateValue } from "../StateProvider";
 
-{
-  /* Code inspiration from Clever Programmer YT */
-}
+/*
+ * Class Name: Sidebar.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=Oo4ziTddOxs
+ * @reference https://firebase.google.com/docs/firestore
+ */
+
 function Sidebar() {
   const [channels, setChannels] = useState([]);
   const [{ user }] = useStateValue();
