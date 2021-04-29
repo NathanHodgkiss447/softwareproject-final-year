@@ -43,7 +43,7 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
       {Icon ? (
         <h6>{title}</h6>
       ) : (
-        <h6 className="sidebarOption__channel">
+        <h6 className="sidebarOption__channel" id={title}>
           <span className="sidebarOption__hash" /># {title}
         </h6>
       )}

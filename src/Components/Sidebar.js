@@ -51,15 +51,15 @@ function Sidebar() {
         <CreateIcon />
       </div>
 
-      <Link to="/resources">
+      <Link to="/resources" id="resource">
         <SidebarResource Icon={InsertCommentIcon} title="Resources" />
       </Link>
 
-      <Link to="/journalEntry">
+      <Link to="/journalEntry" id="journal">
         <SidebarResource Icon={InsertCommentIcon} title="Programming Journal" />
       </Link>
 
-      <Link to="/journal-notes">
+      <Link to="/journal-notes" id="notes">
         <SidebarResource Icon={InsertCommentIcon} title="Notes" />
       </Link>
       <hr />

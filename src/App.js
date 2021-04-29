@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import "./Styles/App.scss";
 import "./Styles/SidebarResource.scss";
 import Header from "./Components/Header";
@@ -25,11 +26,21 @@ const alanKey =
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
+  //Navigation for resource section (AlanAI)
   useEffect(() => {
     alanBtn({
       key: alanKey,
-      onCommand: ({ testCommand }) => {
-        alert("Test code was exected");
+      onCommand: ({ command }) => {
+        //Alan AI commands - Take user input, pass to back end, then select appropriate command to pass as an argument to function.
+        if (command === "navigationResource") {
+          document.getElementById("resource").click();
+        } else if (command === "navigationJournal") {
+          document.getElementById("journal").click();
+        } else if (command === "navigationNotes") {
+          document.getElementById("notes").click();
+        } else if (command === "generalNavigation") {
+          document.getElementById("general").click();
+        }
       },
     });
   }, []);
