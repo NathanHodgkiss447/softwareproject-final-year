@@ -7,6 +7,16 @@ import { firebaseApp } from "../firebase";
 import { useEffect, useState } from "react";
 import "../Styles/Login.scss";
 
+/*
+ * Class Name: SidebarOption.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=Oo4ziTddOxs
+ *
+ */
+
 function Login() {
   const [, dispatch] = useStateValue();
 

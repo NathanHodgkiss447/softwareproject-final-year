@@ -7,9 +7,15 @@ import InfoIcon from "@material-ui/icons/Info";
 import IconWithTooltip from "icon-with-tooltip";
 import "../Styles/tooltip.scss";
 
-//Followed tutorial from CodAffection
-
-// HTTP Errors from: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+/*
+ * Class Name: ContactForm.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=pI4438IHBYY
+ * @reference https://firebase.google.com/docs/firestore
+ */
 
 const ContactForm = (props) => {
   const initialFieldValues = {

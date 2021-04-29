@@ -3,6 +3,16 @@ import { useState } from "react";
 import { Card, CardTitle, CardImg, CardBody, Button, Modal } from "reactstrap";
 import "../Styles/BookCard.scss";
 
+/*
+ * Class Name: BookCards.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=kL3H-wTWPSQ
+ *
+ */
+
 const BookCards = ({
   thumbnail,
   title,

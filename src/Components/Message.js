@@ -1,6 +1,16 @@
 import React from "react";
 import "../Styles/Message.scss";
 
+/*
+ * Class Name: Message.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=Oo4ziTddOxs
+ *
+ */
+
 function Message({ message, timestamp, user, userImage }) {
   return (
     <div className="message">

@@ -3,6 +3,16 @@ import { useHistory } from "react-router-dom";
 import "../Styles/SidebarOption.scss";
 import db from "../firebase";
 
+/*
+ * Class Name: SidebarOption.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=Oo4ziTddOxs
+ * @reference https://firebase.google.com/docs/firestore
+ */
+
 function SidebarOption({ Icon, title, id, addChannelOption }) {
   const history = useHistory();
 
@@ -33,7 +43,7 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
       {Icon ? (
         <h6>{title}</h6>
       ) : (
-        <h6 className="sidebarOption__channel">
+        <h6 className="sidebarOption__channel" id={title}>
           <span className="sidebarOption__hash" /># {title}
         </h6>
       )}

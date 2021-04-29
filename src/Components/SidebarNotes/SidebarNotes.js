@@ -5,7 +5,15 @@ import List from "@material-ui/core/List";
 import { Divider, Button } from "@material-ui/core";
 import SidebarItemComponent from "../SidebarItem/SidebarItem";
 
-// Code followed from The Assembly on YouTube
+/*
+ * Class Name: SidebarNotes.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=dGM_T5gqmrA
+ *
+ */
 
 class SidebarComponent extends React.Component {
   constructor() {

@@ -12,7 +12,16 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { toast, ToastContainer } from "react-toastify";
 import { formatMs } from "@material-ui/core";
-//Followed tutorial from CodAffection
+
+/*
+ * Class Name: ContactForm.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=pI4438IHBYY
+ * @reference https://firebase.google.com/docs/firestore
+ */
 
 const Contacts = () => {
   const [journalObjects, setContactObjects] = useState([]);

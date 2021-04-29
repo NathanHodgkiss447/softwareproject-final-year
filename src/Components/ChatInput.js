@@ -6,6 +6,16 @@ import db from "../firebase";
 import firebase from "firebase";
 import "../Styles/ChatInput.scss";
 
+/*
+ * Class Name: Sidebar.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=Oo4ziTddOxs
+ * @reference https://firebase.google.com/docs/firestore
+ */
+
 function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState("");
   const [{ user }] = useStateValue();

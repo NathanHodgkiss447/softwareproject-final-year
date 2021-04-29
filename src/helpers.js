@@ -1,3 +1,13 @@
+/*
+ * Class Name: helpers.js
+ * Date: 28/04/2021
+ *
+ * @author Nathan Hodgkiss, X17381176
+ *
+ * @reference https://www.youtube.com/watch?v=dGM_T5gqmrA
+ *
+ */
+
 export default function debounce(a, b, c) {
   var d, e;
   return function () {
