@@ -68,6 +68,7 @@ const ContactForm = (props) => {
     let numberCollection = numberArray.map(Number);
     let number = numberCollection[0];
     let text = "";
+
     let solutionCheck;
 
     // First Check  --- Test to see if there is a use provided solution
@@ -783,7 +784,7 @@ const ContactForm = (props) => {
             </ReactTooltip>
           </span>
         </div>
-        <div className="form-row">
+        <div className="form-group input-group">
           <div className="form-group input-group ">
             <div className="input-group-prepend">
               <div className="input-group-text">
