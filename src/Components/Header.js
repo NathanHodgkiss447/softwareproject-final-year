@@ -3,7 +3,6 @@ import "../Styles/Header.scss";
 import { Avatar } from "@material-ui/core";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import SearchIcon from "@material-ui/icons/Search";
-import HelpIcon from "@material-ui/icons/Help";
 import { Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { firebaseApp } from "../firebase";

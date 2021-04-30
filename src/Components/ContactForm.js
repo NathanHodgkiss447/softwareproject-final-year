@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import db from "../firebase";
 import ReactTooltip from "react-tooltip";
 import nlp from "compromise";
 import { v4 as uuidv4 } from "uuid";
 import InfoIcon from "@material-ui/icons/Info";
-import IconWithTooltip from "icon-with-tooltip";
 import "../Styles/tooltip.scss";
 
 /*
