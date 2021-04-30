@@ -10,7 +10,6 @@ import InsertCommentIcon from "@material-ui/icons/InsertComment";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
 import db from "../firebase";
-import { firebaseApp } from "../firebase";
 import { useStateValue } from "../StateProvider";
 
 /*

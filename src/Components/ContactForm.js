@@ -68,7 +68,6 @@ const ContactForm = (props) => {
     let numberCollection = numberArray.map(Number);
     let number = numberCollection[0];
     let text = "";
-    let test = "";
     let solutionCheck;
 
     // First Check  --- Test to see if there is a use provided solution

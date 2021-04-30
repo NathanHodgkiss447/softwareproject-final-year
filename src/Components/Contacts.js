@@ -1,17 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
-import realTimeDB from "../firebase";
-import firebaseApp from "../firebase";
-import firebase from "../firebase";
 import db from "../firebase";
 import "../Styles/JournalForm.scss";
-import Journal from "./Journal";
-import { v4 as uuidv4 } from "uuid";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { toast, ToastContainer } from "react-toastify";
-import { formatMs } from "@material-ui/core";
 
 /*
  * Class Name: ContactForm.js
@@ -125,7 +119,7 @@ const Contacts = () => {
             <thead className="thead-light">
               <tr>
                 <th data-testid="heading-name">Project Name</th>
-                <th data-testid="heading-language">Programming Language</th>
+                <th data-testid="heading-language">Project Language</th>
                 <th data-testid="heading-error">Error</th>
                 <th data-testid="heading-solution">Solution</th>
                 <th data-testid="heading-actions">Actions</th>
