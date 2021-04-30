@@ -5,7 +5,7 @@ import BookCards from "./BookCards.js";
 import { useState, useEffect } from "react";
 import { InputGroup, Input, InputGroupAddon, Spinner } from "reactstrap";
 import { FormGroup } from "@material-ui/core";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "../Styles/Books.scss";
 import "../Styles/Resource.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -62,7 +62,6 @@ function Resources() {
   };
 
   const handleCards = () => {
-    console.log(cards);
     const items = cards.map((item, io) => {
       let thumbnail = "";
       try {
@@ -130,27 +129,6 @@ function Resources() {
             </Button>
           </InputGroupAddon>
         </InputGroup>
-      </div>
-      <div className="d-flex">
-        <FormGroup className="ml-5">
-          <Input
-            type="number"
-            id="maxResults"
-            placeholder="Max Results"
-            value={maxResults}
-            onChange={(e) => setMaxResults(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup className="ml-5">
-          <Input
-            type="number"
-            id="startIndex"
-            placeholder="Start Index"
-            value={startIndex}
-            onChange={(e) => setStartIndex(e.target.value)}
-          />
-        </FormGroup>
-        <ToastContainer />
       </div>
       {handleCards()}
     </div>

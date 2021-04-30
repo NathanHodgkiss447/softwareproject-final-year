@@ -1,6 +1,5 @@
 import React from "react";
 import db from "../firebase";
-import timestamp from "../firebase";
 import EditorComponent from "./Editor/EditorNote.js";
 import "../Styles/Note.scss";
 import SidebarComponent from "./SidebarNotes/SidebarNotes";

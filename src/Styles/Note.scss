@@ -16,6 +16,9 @@
   overflow-x: hidden;
   .journal__header {
     margin-bottom: 3%;
+    h3 {
+      margin-right: 225px;
+    }
   }
   .col-md-5 {
     padding-left: 4%;
@@ -40,6 +43,7 @@
     padding-right: 4%;
     .table {
       border: 1px solid #33475b;
+      border-radius: 10px;
       .thead-light th {
         color: white;
         font-weight: 400;
