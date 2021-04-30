@@ -27,13 +27,10 @@ const Contacts = () => {
   const [journalObjects, setContactObjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentId, setCurrentId] = useState("");
-
-  // Test
   const [projectName, setProjectName] = useState("");
   const [programmingLanguage, setProgrammingLanguage] = useState("");
   const [error, setError] = useState("");
   const [solution, setSolution] = useState("");
-  const [id, setId] = useState("");
 
   const data = db.collection("journal");
 
