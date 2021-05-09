@@ -1,6 +1,6 @@
 ## 4TH Year Software Project
 ## Title: 
-Smart Programming Journal
+- Smart Programming Journal
 
 ## Front-End: 
 - React.
