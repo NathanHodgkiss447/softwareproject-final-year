@@ -1,3 +1,13 @@
+# 4TH Year Software Project
+# Title: Smart Programming Journal
+
+# Front-End: React.
+# Back-End: Firebase, AlanAI.
+# Testing: Jest, Cypress.
+# Libraries: Material UI, Compromise, React Quil, AlanAI, ...
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
