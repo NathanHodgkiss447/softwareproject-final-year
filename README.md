@@ -1,4 +1,4 @@
-## 4TH Year Software Project
+## 4th Year Software Project
 ## Title: 
 - Smart Programming Journal
 
