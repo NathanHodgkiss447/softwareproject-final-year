@@ -1,10 +1,20 @@
 # 4TH Year Software Project
-# Title: Smart Programming Journal
+# Title: 
+Smart Programming Journal
 
-# Front-End: React.
-# Back-End: Firebase, AlanAI.
-# Testing: Jest, Cypress.
-# Libraries: Material UI, Compromise, React Quil, AlanAI, ...
+# Front-End: 
+- React.
+# Back-End: 
+- Firebase.
+- AlanAI.
+# Testing: 
+- Jest.
+- Cypress.
+# Libraries: 
+- Material UI.
+- Compromise.
+- React Quil. 
+- AlanAI.
 
 
 
