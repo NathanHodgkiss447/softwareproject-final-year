@@ -16,6 +16,7 @@
 - React Quil. 
 - AlanAI.
 
+Site Live: https://gallant-ride-3f1eb4.netlify.app/ 
 
 
 # Getting Started with Create React App
